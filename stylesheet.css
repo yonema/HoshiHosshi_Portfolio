@@ -1,0 +1,443 @@
+/* グローバル変数 */
+:root
+{
+    /* タイトル画像のサイズ */
+    --kTitleImageWidth: calc(1980px * 0.7);
+    --kTitleImageHeight: calc(1080px * 0.7);
+
+    /* 通常の画像のサイズ */
+     --kNormalImageWidth: calc(1980px * 0.6);
+     --kNormalImageHeight: calc(1080px * 0.6);
+
+    /* ミニ画像のサイズ */
+     --kMinilImageWidth: 324px;
+     --kMinilImageHeight: 324px;
+
+    /* ゲーム作品紹介のマージン */
+    --kGameContentMarginVertical: 50px;
+    --kGameContentTexttMarginLeft: 10px;
+    /* ゲーム作品紹介の右側のアイテムの最低幅 */
+    --kGameContentRightMinWidth: 600px;
+
+     /* ヘッダーのZインデックス */
+     --kHeaderZ-index: 2;
+
+     /* プロフィールテキストの拡大率 */
+     --kProfileTextScale: 1.5;
+}
+
+html
+{
+    /* ページ内リンクの移動時に、スムーズに移動する */
+    scroll-behavior: smooth;
+}
+
+body
+{
+    /* 背景 */
+    background-image: url(images/background.png);
+    background-attachment: fixed;
+    background-position: left top;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+    /* 表示アニメーション */
+    animation: fadeIn 1s forwards;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn
+{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* タイトル画像のスタイル */
+.titleImage
+{ 
+    width: var(--kTitleImageWidth);
+    height: var(--kTitleImageHeight);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
+}
+
+/* 通常の画像のスタイル */
+.normalImage
+{ 
+    width: var(--kNormalImageWidth);
+    height: var(--kNormalImageHeight);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
+}
+
+/* ミニ画像のスタイル */
+.miniImage
+{
+    width: var(--kMinilImageWidth);
+    height: var(--kMinilImageHeight);
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
+}
+
+/* 「目次へ」のスタイル */
+.goToIndexText
+{
+    text-align: right;
+}
+
+/* ヘッダーボックス */
+.headerBox
+{
+    /* 上に固定 */
+    position: sticky;
+    top: 0;
+    
+    /* 手前に表示 */
+    z-index: var(--kHeaderZ-index);
+    
+    /* 真ん中に配置 */
+    text-align: center;
+
+    /* 画面いっぱいに広げる */
+    width: 100%;
+
+    /* ボックスのカラー */
+    background-color: rgba(230, 255, 220, 0.9);
+}
+
+/* ヘッダーテキスト */
+.headerText
+{
+    /* 上に固定 */
+    position: sticky;
+    top: 0;
+    
+    /* 手前に表示 */
+    z-index: var(--kHeaderZ-index);
+
+    /* 横に並べて配置 */
+    display: inline-table;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+
+    /* フォントを通常より大きく */
+    font-size: 120%;
+}
+
+/* ホームページのタイトルテキスト */
+.HomePageTilteText
+{
+    text-align: center;
+    font-size: 150%;
+}
+
+/* ホームページの見出しテキスト */
+.HomePageIndexText
+{
+    position: relative;
+    width: fit-content;
+    margin-top: 50px;
+    padding-left: calc(25px + 10px);
+    padding-right: 15px;
+}
+.HomePageIndexText::before
+{
+    transform: skewX(20deg);
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 25px;
+    right: 0;
+    z-index: -1;
+    background-color: chartreuse;
+}
+
+
+/* ゲーム作品紹介の左側のアイテム */
+.gameContentLeft
+{
+    /* 横に並べて配置 */
+    display: inline-block;
+    /* 縦は中央ぞろえ */
+    vertical-align: middle;
+
+    /* 上下にマージン */
+    margin-top: var(--kGameContentMarginVertical);
+    margin-bottom: var(--kGameContentMarginVertical);
+}
+
+/* ゲーム作品紹介の右側のアイテム */
+.gameContentRight
+{
+    /* 横に並べて配置 */
+    display: inline-block;
+    /* 縦は中央ぞろえ */
+    vertical-align: middle;
+
+    /* 上下にマージン */
+    margin-top: var(--kGameContentMarginVertical);
+    margin-bottom: var(--kGameContentMarginVertical);
+
+    /* 左にマージン */
+    margin-left: var(--kGameContentTexttMarginLeft);
+
+    /* 右側のアイテムの幅 */
+    /* 通常は画面の半分の幅 */
+    width: 50%;
+    /* 最低幅は600px */
+    min-width: var(--kGameContentRightMinWidth);
+}
+
+/* ゲーム作品紹介の文章 */
+.gameContentText
+{
+    text-align: left;
+    margin-left: 5px;
+}
+
+.snsIconImage
+{
+    width: 50px;
+    height: 50px;
+}
+
+.googleSlide
+{
+    position: relative;
+    overflow: hidden;
+    margin: 15px 0 20px 0;
+    padding-bottom: 50%;
+    padding-top: 65px;
+}
+
+.googleSlide iframe
+ {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* <チートシート>
+------------------------------------------------------------------------ */
+.right
+{
+    text-align: right;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.border
+{
+    border: 3px solid #ddd;
+}
+
+/* 左寄せ */
+.LeftAdjust
+{
+    float: left;
+}
+
+/* <【CSS】おしゃれなボックスデザイン（囲み枠）のサンプル30>
+https://saruwakakun.com/html-css/reference/box
+------------------------------------------------------------------------ */
+
+.box1 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+}
+.box1 p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+.box27 {
+    display: inline-block;
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px #62c1ce;
+}
+.box27 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #62c1ce;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.box27 p {
+    margin: 0; 
+    padding: 0;
+}
+
+/* 【コピペOK】CSSだけで実装できるおしゃれテーブルデザイン10つ
+https://webliker.info/75964/
+------------------------------------------------------------------------ */
+table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table tr{
+    border-bottom: solid 2px white;
+  }
+  
+  table tr:last-child{
+    border-bottom: none;
+  }
+  
+  table th{
+    position: relative;
+    text-align: left;
+    width: 30%;
+    background-color: #52d082;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  table th:after{
+    display: block;
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top:calc(50% - 10px);
+    right:-10px;
+    border-left: 10px solid #52d082;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  table td{
+    text-align: left;
+    width: 70%;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px 0;
+  }
+  
+
+
+ /* コピペで簡単実装できるプロフィールカード！【HTML/CSS】
+https://obl-life.com/web/182/
+------------------------------------------------------------------------ */
+.profile-card{
+    width: 100%;
+    max-width:500px;
+    position: relative;
+    background: #fff; /*背景の色*/
+    /* box-shadow: 0px 1px 3px rgba(0,0,0,.18); */
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.6);
+    overflow: hidden;
+    margin-left: 35%;
+    border: 5px ridge;
+  }
+  
+  .profile-card:before{
+   width:120%;
+   height:180px;
+   content:"";
+   transform:skew(15deg,10deg);
+   background: #70ff94; /*斜め背景の色*/
+   position:  absolute;
+   top:-15%;
+   left:-10%;
+   z-index: 0;
+  }
+  
+  .profile-card:after{
+   width:120%;
+   height:200px;
+   content:"";
+   transform:skew(15deg,10deg);
+   background: #70ff94; /*斜め背景の色*/
+   position:  absolute;
+   bottom:-15%;
+   left:-10%;
+   z-index: 0;
+  }
+  
+  .profile-card__inner{
+   position: relative;
+    z-index: 1;
+  }
+  
+  .profile-thumb{
+      overflow: hidden;
+      width: 110px;
+      height: 110px;
+      border: #fff 3px solid;
+      border-radius: 55px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      background: #fff;
+  }
+  
+  .profile-thumb img{
+    display: block;
+      width: 100%;
+      height: auto;
+  }
+  
+  .profile-content{
+    margin: 0 0 49px;
+    padding: 30px 30px 50px;
+    
+  }
+  
+  .profile-content span{
+    display: block;
+  }
+  
+  .profile-name{
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 200%;
+  }
+  
+  .profile-job{
+    margin-bottom: 30px;
+    color: #ccc;
+    font-size: calc(10px * var(--kProfileTextScale));
+    text-align: center;
+  }
+  
+  .profile-intro{
+    font-size: calc(12px * var(--kProfileTextScale));
+  }
+  
+  .profile-sns {
+      padding: 5px 0;
+      text-align: center;
+      color: #fff;
+  }
+  
+  .profile-sns span{
+    display: block;
+    font-size: calc(10px * var(--kProfileTextScale));
+
+  }
+  
+  .profile-sns a {
+    font-size: calc(30px * var(--kProfileTextScale));
+      margin: 0 5px;
+      color: #fff;
+
+  }
