@@ -1,5 +1,7 @@
 <link href="stylesheet.css" rel="stylesheet"></link>
 
+<a href = "https://yonema.github.io/Portfolio_HomePage/" target="_blank" >ホームページへ</a>
+
 # **「ほし、ほっしー！！！」ポートフォリオ**<!-- omit in toc -->
 ## 河原電子ビジネス専門学校　ゲームクリエイター科2年
 ## 氏名：米地 真央
@@ -17,6 +19,7 @@
 - [3.操作方法](#3操作方法)
 - [4.ゲーム的にこだわったところ](#4ゲーム的にこだわったところ)
 - [5.技術的にこだわったところ](#5技術的にこだわったところ)
+- [リンク](#リンク)
 
 ***
 
@@ -84,3 +87,10 @@
 3. 触れたポリゴンが一定以上の角度だったら壁だと判定して、落下速度を低下させて、ジャンプボタンを押せば壁ジャンプができるようにした。
 4. 三人称視点カメラを実装して、前移動の入力をするとカメラの前方向に進むようにした。
 5. クリアタイムのランキング上位5つをセーブするようにした。
+
+# リンク
+
+* <a href = "https://yonema.github.io/Portfolio_HomePage/" target="_blank" >ホームページへ</a>
+* <a href = "https://twitter.com/MaoYoneji" target="_blank">Twitter</a>
+* <a href = "https://www.youtube.com/channel/UC03BQEviN9mx7Y-QmyndPuw" target="_blank">YouTube</a>
+* <a href = "https://github.com/yonema" target="_blank">GitHub</a>
